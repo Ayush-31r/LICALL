@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+
+<html><head>
+
+  <!-- Mobile friendly meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="LIC Plans">
+  <meta name="theme-color" content="#004b8d">
+
+
+<style id="fix-header-scroll">
+/* Force table headers to stay in normal document flow (not fixed or sticky) */
+thead, thead th, thead tr { position: static !important; top: auto !important; transform: none !important; }
+.table thead, .plans-table thead, .sticky-header, .table-header { position: static !important; }
+/* Ensure header appears under the control row: give a small top margin if needed */
+#controls-row + table thead { margin-top: 8px; }
+/* If JS adds inline styles like 'position: fixed', this overrides them */
+[style*="position: fixed"] thead, [style*="position: fixed"] thead th { position: static !important; top: auto !important; }
+/* Prevent floating via transform */
+thead[style*="transform"], thead[style*="translate"] { transform: none !important; }
+/* Keep z-index normal so it doesn't overlay other elements when scrolling */
+thead, thead th { z-index: auto !important; }
+</style>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>LIC_plans_allahabad_division_v15_fixed</title>
+<meta content="default-src 'self' data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';" http-equiv="Content-Security-Policy"/>
+<style>
+:root{--lic-blue:#1D4E9E;--bg:#f6f8ff;--card:#fff;--border:#e5e7eb}
+*{box-sizing:border-box}body{margin:0;font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;background:var(--bg);color:#0f172a;padding-top:220px;}
+.topbar{position:fixed;top:0;left:0;right:0;background:linear-gradient(120deg,#0F2E6E,#1D4E9E);color:#fff;padding:12px 16px;z-index:60;height:64px;display:flex;align-items:center}
+.topbar .title{font-weight:700;font-size:15px}
+.container{max-width: 2600px;margin:12px auto;padding:0 12px}
+.info-block{background:#fff;padding:16px;border-radius:10px;margin-top:8px;border:1px solid var(--border);position:relative;overflow:hidden}
+.info-block::before{content:'LIC';position:absolute;right:10px;top:6px;font-size:96px;color:#0f172a;opacity:0.04;transform:rotate(-20deg);pointer-events:none}
+.info-block .row{margin:6px 0;font-size:14px;color:#0f172a}
+.panel{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--border);box-shadow:0 8px 20px rgba(2,6,23,0.06);margin-top:12px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:10px;border-bottom:1px solid var(--border);background:#fff;position:relative;z-index:50}
+.search{flex:1 1 260px;display:flex;gap:10px}
+.search input{flex:1;padding:10px;border-radius:10px;border:1px solid var(--border);font-size:14px}
+.seg{display:flex;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.seg button{border:0;padding:8px 10px;background:#fff;cursor:pointer;color:#475569}
+.seg button.active{background:#FFD200;color:#1b2a4b;font-weight:700}
+.ptype-select{margin-left:auto}
+.table-scroll{overflow-x:auto}
+.table{width:100%;min-width:1100px;border-collapse:collapse}
+.table thead th{position:sticky;top: var(--table-top,64px);background:#f0f4ff;color:var(--lic-blue);padding:12px 10px;font-weight:700;border-bottom:1px solid var(--border);z-index:40}
+.table tbody td{padding:12px 10px;border-bottom:1px solid var(--border);font-size:14px}
+td.name{font-weight:700;color:var(--lic-blue);cursor:pointer;}
+.tooltip-card{display:none;position:fixed;max-width: 2600px;width:min(420px,calc(100vw - 24px));background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 18px 50px rgba(2,6,23,.25);padding:12px;z-index:100000;line-height:1.35}
+.tooltip-grid{display:grid;grid-template-columns:140px 1fr;gap:6px 10px;font-size:13px}
+.abbrev{max-width: 2600px;margin:18px auto;padding:12px 16px;border-radius:8px;background:#fff;border:1px solid var(--border);font-size:13px;color:#334155;line-height:1.4}
+.warning{max-width: 2600px;margin:8px auto;padding:12px 16px;border-radius:8px;background:#fff;border:1px solid #fee2e2;font-size:13px;color:#b91c1c;font-weight:700}
+
+
+/* Kalam quote block just below topbar */
+.kalam-quote-wrap{margin-top:0!important;margin-bottom:6px!important;transition:all .3s ease}
+.kalam-quote-wrap:hover{box-shadow:0 6px 14px rgba(2,6,23,0.12);transform:scale(1.01)}
+@media (max-width:720px){
+  .kalam-quote-wrap{padding:8px 12px}
+  .kalam-quote-wrap div{font-size:15px!important}
+}
+
+</style>
+<style id="v15-adjust">
+:root{--topbar-height:120px}
+.table{min-width:900px}
+.table thead th{padding:8px 8px; top: var(--table-top,64px);}
+.table tbody td{padding:10px 8px}
+</style>
+<style id="table-top-fix">
+:root{--table-top:64px}
+.table thead th{position:sticky; top:var(--table-top); z-index:40}
+</style>
+
+<style id="mobile-topbar-fix">
+/* Keep topbar content visible on narrow mobile screens without changing layout elsewhere */
+@media (max-width: 700px) {
+  .topbar { padding: 14px 12px !important; }
+  .topbar .topbar-inner { padding: 0 6px !important; }
+  .topbar .topbar-inner > div { font-size: 14px !important; line-height:1.15 !important; margin-bottom:4px !important; }
+  .topbar .topbar-inner > div[style*="display:flex"] { flex-direction: column !important; align-items: stretch !important; gap:4px !important; }
+  .topbar .topbar-inner > div[style*="display:flex"] > div { width:100% !important; text-align:center !important; }
+  :root { --table-top: calc(64px + 0px) !important; } /* ensure table header still rests below fixed topbar */
+}
+</style>
+
+
+<style id="topbar-visibility-fix">
+/* Ensure topbar stays above all other content and its inner text is visible on all devices */
+.topbar { position: fixed !important; top: 0 !important; left: 0; right: 0; z-index: 9999 !important; overflow: visible !important; }
+.topbar .topbar-inner { overflow: visible !important; }
+.topbar .topbar-inner div { white-space: normal !important; word-break: break-word !important; }
+/* Make sure the table header still respects the topbar height */
+:root { --table-top: calc( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( (64px) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ); }
+@media (max-width: 700px) {
+  .topbar { padding: 12px 12px !important; }
+  .topbar .topbar-inner > div { font-size: 14px !important; line-height:1.12 !important; margin-bottom:4px !important; }
+  .topbar .topbar-inner > div[style*="display:flex"] { flex-direction: column !important; align-items: stretch !important; gap:4px !important; }
+  .topbar .topbar-inner > div[style*="display:flex"] > div { width:100% !important; text-align:center !important; }
+}
+</style>
+
+
+<style id="topbar-space-fix">
+/* Force a consistent topbar height and reserve space so content below can't overlap or push header content out on mobile */
+:root { --topbar-reserved-height: 120px !important; --table-top: var(--topbar-reserved-height) !important; }
+.topbar { min-height: var(--topbar-reserved-height) !important; box-sizing: border-box !important; }
+body { padding-top: var(--topbar-reserved-height) !important; -webkit-padding-start: 0 !important; }
+/* Make sure inner content wraps and is visible */
+.topbar .topbar-inner { display:block !important; overflow: visible !important; }
+.topbar .topbar-inner > div { display:block !important; width:100% !important; text-align:center !important; }
+/* Keep previous mobile adjustments */
+@media (max-width: 700px) {
+  :root { --topbar-reserved-height: 140px !important; --table-top: var(--topbar-reserved-height) !important; }
+  .topbar { padding: 10px 10px !important; }
+  .topbar .topbar-inner > div { font-size: 14px !important; line-height:1.12 !important; margin-bottom:4px !important; }
+  .topbar .topbar-inner > div[style*="display:flex"] { flex-direction: column !important; gap:4px !important; align-items: stretch !important; }
+  .topbar .topbar-inner > div[style*="display:flex"] > div { width:100% !important; text-align:center !important; }
+}
+</style>
+
+</head>
+<body>
+<div class="topbar" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(120deg,#0F2E6E,#1D4E9E);color:#fff;box-shadow:0 6px 18px rgba(2,6,23,0.12);box-sizing:border-box;padding:48px 36px;">
+<div class="topbar-inner" style="width:100%;max-width:2800px;margin:0 auto;padding:0 8px;box-sizing:border-box;">
+<div style="text-align:center;font-size:20px;font-weight:700;line-height:1.2;margin-bottom:6px;">LIC OF INDIA — Inforce Insurance Plan</div>
+<div style="text-align:center;font-size:15px;opacity:0.95;line-height:1.2;margin-bottom:4px;">Division: Allahabad</div>
+<div style="text-align:center;font-size:15px;opacity:0.95;line-height:1.2;margin-bottom:8px;">Presented By: DO NB Department Created By: Prashant Sahu</div>
+<div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;line-height:1.2;margin-top:4px;">
+<div style="text-align:left;">*To find detailed benefits information click to Plan name</div>
+<div style="text-align:right;">Updated On: 10/09/2025</div>
+</div>
+<div style="text-align:center;font-size:13px;line-height:1.2;margin-top:4px;">
+</div>
+</div>
+</div>
+<!-- INSERTED: Kalam quote below topbar -->
+<div class="kalam-quote-wrap" style="max-width:1100px;margin:0 auto 6px auto;display:flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:10px;background:linear-gradient(120deg,#eef3ff,#dfe8ff);box-shadow:0 3px 8px rgba(2,6,23,0.06);position:relative;z-index:70;">
+<div style="font-size:16px;color:#0F2E6E;line-height:1.4;font-weight:600;font-family:'Georgia','Times New Roman',serif;text-align:center;">
+    “All of us do not have equal talent. But, all of us have an equal opportunity to develop our talents.”
+    <div style="font-size:13px;font-weight:500;color:#1D4E9E;opacity:0.9;margin-top:4px;">— A. P. J. Abdul Kalam</div>
+</div>
+</div>
+<!-- END INSERT -->
+<div style="text-align:center;font-size:15px;opacity:0.95;line-height:1.15;margin-bottom:4px;"></div>
+<div style="text-align:center;font-size:15px;opacity:0.95;line-height:1.15;margin-bottom:8px;"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+<div style="text-align:left;font-size:13px;flex:1 1 60%;"></div>
+<div style="text-align:right;font-size:13px;flex:0 0 auto;white-space:nowrap;"></div>
+</div>
+<!-- TOPBAR: generated to widen and align rows -->
+<div style="margin-left:16px;flex:0 0 auto;color:#fff;font-size:12px"></div>
+<div class="container">
+</div>
+<div class="panel">
+<div class="controls" style="margin-top:0px;">
+<div class="search"><input id="search" placeholder="Search by Plan Name or Plan No..."/></div>
+<div class="seg"><button class="active" id="seg-all">All</button><button id="seg-par">PAR</button><button id="seg-nonpar">NON PAR</button></div>
+<div class="ptype-select"><label for="ptype">Plan Type</label> <select id="ptype"><option value="">All</option><option>Whole Life</option><option>Endowment</option><option>Money Back</option><option>ULIP-Pension</option><option>ULIP</option><option>Pension</option><option>TERM</option></select></div>
+</div>
+<div class="table-scroll"><table class="table" id="plans-table"><thead><tr>
+<th>Sr. No.</th>
+<th>Product Name</th>
+<th>Plan No</th>
+<th>Category</th>
+<th>Availability</th>
+<th>Age at Entry (Min–Max)</th>
+<th>Maturity age (Max)</th>
+<th>Policy Term (Min–Max)</th>
+<th>Min Sum Assured</th>
+<th>Rider available</th>
+</tr></thead><tbody></tbody></table></div>
+</div>
+<script nonce="npNth-cmXVp_u4BD">
+const RECORDS = [
+  {
+    "row": 6,
+    "visible": [
+      "1",
+      "Jeevan Anand",
+      "715",
+      "PAR",
+      "Whole Life",
+      "Offline",
+      "18",
+      "50",
+      "75",
+      "15",
+      "35",
+      "200000",
+      "AB/ADDB/TERM/CIHR, <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "BSA+VSRB+FAB",
+      "",
+      "SAD+VSRB+FAB , SAD= 7*AP or 1.25*BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 75% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -65%"
+    ],
+    "plan_name": "Jeevan Anand",
+    "plan_no": "715",
+    "plan_type": "Whole Life"
+  },
+  {
+    "row": 7,
+    "visible": [
+      "2",
+      "New Endowment Plan",
+      "714",
+      "PAR",
+      "Endowment",
+      "Offline",
+      "8",
+      "50",
+      "75",
+      "12",
+      "35",
+      "200000",
+      "AB/ADDB/TERM/CIHR/PWB ,  AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "BSA+VSRB+FAB",
+      "",
+      "SAD+VSRB+FAB , SAD= 7*AP or 1.25*BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 75% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -65%"
+    ],
+    "plan_name": "New Endowment Plan",
+    "plan_no": "714",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 8,
+    "visible": [
+      "3",
+      "Single Premium Endowment Plan",
+      "717",
+      "PAR",
+      "Endowment",
+      "Offline",
+      "30 Days",
+      "65",
+      "75",
+      "10",
+      "25",
+      "100000",
+      "ADDB/TERM , <30% of Pre. Under the base plan"
+    ],
+    "hover": [
+      "BSA+VSRB+FAB",
+      "",
+      "SAD+RB+FAB , SAD= Age < 50 Yr 1.25*SP , Age > 50 Yr 1.10*SP or BSA",
+      "1 to 3 Yr= 75%*SPP , ThereAfter= 90%*SPP",
+      "1 to 5= 50%*SV , 6 to 9= 60%*SV ,10 Onwards= 80%*SV"
+    ],
+    "plan_name": "Single Premium Endowment Plan",
+    "plan_no": "717",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 9,
+    "visible": [
+      "4",
+      "Jeevan Lakshya",
+      "733",
+      "PAR",
+      "Endowment",
+      "Offline",
+      "18",
+      "50",
+      "65",
+      "13",
+      "25",
+      "200000",
+      "AB/ADDB/TERM , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "BSA+VSRB+FAB",
+      "",
+      "SAD+RB+FAB , SAD= 7*AP or 1.10*BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 80% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -70%"
+    ],
+    "plan_name": "Jeevan Lakshya",
+    "plan_no": "733",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 10,
+    "visible": [
+      "5",
+      "Jeevan Labh",
+      "736",
+      "PAR",
+      "Endowment",
+      "Offline",
+      "8",
+      "59",
+      "75",
+      "25-16,21-15,16-10",
+      "",
+      "200000",
+      "AB/ADDB/TERM/PWB , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "BSA+VSRB+FAB",
+      "",
+      "SAD+RB+FAB , SAD= 7*AP or BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV, which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 80% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -70%"
+    ],
+    "plan_name": "Jeevan Labh",
+    "plan_no": "736",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 11,
+    "visible": [
+      "6",
+      "Micro Bachat",
+      "751",
+      "PAR",
+      "Endowment",
+      "Offline/Online",
+      "18",
+      "55",
+      "70",
+      "10",
+      "15",
+      "100000",
+      "AB/ADDB , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "BSA+LA (LA after full 5 Yr), BSA< 1.8 L Mode- YLY/HLY , BSA> 1.8 L Mode-ALL , Auto Cover: 3 Yr - 6 M , 5 Yr - 2 Yr",
+      "",
+      "SAD+LA , SAD= 7*AP or BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "Inforce : upto 70%  , Paidup : upto 60%"
+    ],
+    "plan_name": "Micro Bachat",
+    "plan_no": "751",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 12,
+    "visible": [
+      "7",
+      "Bima Jyoti",
+      "760",
+      "NON PAR",
+      "Endowment",
+      "Offline/Online",
+      "30 Days",
+      "60",
+      "75",
+      "15",
+      "20",
+      "125000",
+      "AB/ADDB/TERM/PWB , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "BSA+Guaranteed Addition , GA@50₹/1000 BSA BSA< 1.5 L Mode- YLY/HLY , BSA> 1.5 L Mode-ALL",
+      "",
+      "SAD+RB+FAB , SAD= 7*AP or 1.25*BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 80% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -75%"
+    ],
+    "plan_name": "Bima Jyoti",
+    "plan_no": "760",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 13,
+    "visible": [
+      "8",
+      "Jeevan Azad",
+      "768",
+      "NON PAR",
+      "Endowment",
+      "Offline/Online",
+      "30 Days",
+      "50",
+      "65",
+      "15",
+      "20",
+      "200000",
+      "AB/ADDB/PWB , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "BSA",
+      "",
+      "SAD+RB+FAB , SAD= 7*AP or BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 80% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -70%"
+    ],
+    "plan_name": "Jeevan Azad",
+    "plan_no": "768",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 14,
+    "visible": [
+      "9",
+      "Amrit Baal",
+      "774",
+      "NON PAR",
+      "Endowment",
+      "Offline/Online",
+      "30 Days",
+      "13",
+      "25",
+      "Sing :5-25,Ltd :10-25",
+      "",
+      "200000",
+      "PWB"
+    ],
+    "hover": [
+      "BSA+Guaranteed Addition , GA@80₹/1000 BSA , Education Loan for Girl Child discount on interest rate= 100BP or 1%",
+      "",
+      "Ltd. Premium: Opt  I- 7*AP or BSA , Opt II- 10*AP or BSA  Single Premium:  Opt III- 1.25*SP or BSA    IV- 10*SP",
+      "1 to 3 Yr= 75%*SPP , ThereAfter= 90%*SPP",
+      "For I & II:  Inforce- upto 90%*SV , Paidup- 80%*SV , For III & IV: upto 75%*SV"
+    ],
+    "plan_name": "Amrit Baal",
+    "plan_no": "774",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 15,
+    "visible": [
+      "10",
+      "Nav Jeevan Shree Single",
+      "911",
+      "NON PAR",
+      "Endowment",
+      "Offline/Online LTP",
+      "30 Days",
+      "60",
+      "75",
+      "10",
+      "20",
+      "100000",
+      "ADDB/TERM"
+    ],
+    "hover": [
+      "BSA+ Guaranteed Addition , GA@85₹/1000 BSA",
+      "",
+      "Opt I: Higher of 1.25*TSP or BSA        Opt II: Higher of 10*TSP",
+      "First 3 Yr= 75%*SPP , ThereAfter= 90%*SPP",
+      "For Term < 10 Yr = upto 90% For Term ≥ 10 Yr = 70%"
+    ],
+    "plan_name": "Nav Jeevan Shree Single",
+    "plan_no": "911",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 16,
+    "visible": [
+      "11",
+      "Nav Jeevan Shree",
+      "912",
+      "NON PAR",
+      "Endowment",
+      "Offline/Online LTP",
+      "30 Days",
+      "60",
+      "75",
+      "10",
+      "20",
+      "500000",
+      "AB/ADDB/TERM/PWB"
+    ],
+    "hover": [
+      "BSA+ Guaranteed Addition (on tabular Annualized Premium), 10-13 Yr- GA@8.5% , 14-17 Yr- GA@9% , 18-20 Yr- GA@9.5%",
+      "",
+      "Opt I: Higher of 7*TAP*MAF or BSA  Opt II: Higher of 10*TAP*MAF or BSA",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 80% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -70%"
+    ],
+    "plan_name": "Nav Jeevan Shree",
+    "plan_no": "912",
+    "plan_type": "Endowment"
+  },
+  {
+    "row": 17,
+    "visible": [
+      "12",
+      "New Money Back (20)",
+      "720",
+      "PAR",
+      "Money Back",
+      "Offline",
+      "13",
+      "50",
+      "70",
+      "PPT-15",
+      "20",
+      "200000",
+      "AB/ADDB/TERM , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "40%*BSA+VSRB+FAB",
+      "5th Yr,10th Yr & 15th Yr -20% each",
+      "SAD+RB+FAB , SAD= 7*AP or 1.25*BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 75% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -65%"
+    ],
+    "plan_name": "New Money Back (20)",
+    "plan_no": "720",
+    "plan_type": "Money Back"
+  },
+  {
+    "row": 18,
+    "visible": [
+      "13",
+      "New Mondey Back (25)",
+      "721",
+      "PAR",
+      "Money Back",
+      "Offline",
+      "13",
+      "45",
+      "70",
+      "PPT-20",
+      "25",
+      "200000",
+      "AB/ADDB/TERM , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "40%*BSA+VSRB+FAB",
+      "6th Yr,10th Yr, 15th Yr & 20th Yr -15% each",
+      "SAD+RB+FAB , SAD= 7*AP or 1.25*BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 75% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -65%"
+    ],
+    "plan_name": "New Mondey Back (25)",
+    "plan_no": "721",
+    "plan_type": "Money Back"
+  },
+  {
+    "row": 19,
+    "visible": [
+      "14",
+      "New Children's Money Back",
+      "732",
+      "PAR",
+      "Money Back",
+      "Offline",
+      "0",
+      "12",
+      "25",
+      "25-Age at entry",
+      "",
+      "200000",
+      "PWB"
+    ],
+    "hover": [
+      "40%*BSA+VSRB+FAB",
+      "18th Yr,20th Yr & 22th Yr- 20% each",
+      "SAD+VSRB+FAB , SAD= 7*AP or BSA ,          ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 75% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -65%"
+    ],
+    "plan_name": "New Children's Money Back",
+    "plan_no": "732",
+    "plan_type": "Money Back"
+  },
+  {
+    "row": 20,
+    "visible": [
+      "15",
+      "Jeevan Tarun",
+      "734",
+      "PAR",
+      "Money Back",
+      "Offline",
+      "30 Days",
+      "12",
+      "25",
+      "20-Age at entry",
+      "",
+      "200000",
+      "PWB"
+    ],
+    "hover": [
+      "SAM: BSA+VSRB+FAB ,BSA= Opt I:100%,Opt II: 75%,Opt III: 50%,Opt IV: 25%",
+      "20th to 24th Yr each, Opt I:NIL,Opt II: 5%,Opt III: 10%,Opt IV: 15%",
+      "SAD+RB+FAB , SAD= 7*AP or 1.25*BSA , ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 75% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -65%"
+    ],
+    "plan_name": "Jeevan Tarun",
+    "plan_no": "734",
+    "plan_type": "Money Back"
+  },
+  {
+    "row": 21,
+    "visible": [
+      "16",
+      "Bima Shree",
+      "748",
+      "PAR",
+      "Money Back",
+      "Offline",
+      "8",
+      "55",
+      "69",
+      "14",
+      "28",
+      "1000000",
+      "AB/ADDB/TERM/PWB , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "SAM+GA+LA,1-5 Yr- GA@50 ₹ & 6-28 Yr - GA@55 ₹ /1000 BSA  SAM= 14 Yr-40%*BSA, 16 Yr- 30%*BSA, 18 Yr- 20%*BSA, 20-24-28 Yr- 10%*BSA",
+      "T-14 Yr-30%*BSA, T-16 Yr- 35%*BSA , T-18 Yr- 40%*BSA , T-20 -24-28 Yr- 45%*BSA , SB for each  (T-4,T-2) Yr",
+      "SAD+GA+LA, SAD=7*AP or 1.25*BSA ,   ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 75% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -65%"
+    ],
+    "plan_name": "Bima Shree",
+    "plan_no": "748",
+    "plan_type": "Money Back"
+  },
+  {
+    "row": 22,
+    "visible": [
+      "17",
+      "Bima Ratna",
+      "764",
+      "NON PAR",
+      "Money Back",
+      "Offline/Online",
+      "30 Days",
+      "55",
+      "70",
+      "15-11,20-16,25-21",
+      "",
+      "500000",
+      "AB/ADDB/TERM/PWB , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "SAM+GA,1-5 Yr - GA@50 ₹,6-10 Yr- GA@55 ₹ & 11-25 Yr- GA@60 ₹/1000 BSA , SAM= 50%*BSA",
+      "T-15 -20-25 Yr- 25%*BSA, SB for each (T-2,T-1) Yr",
+      "SAD+GA, SAD=7*AP or 1.25*BSA ,   ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV , which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 75% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -65%"
+    ],
+    "plan_name": "Bima Ratna",
+    "plan_no": "764",
+    "plan_type": "Money Back"
+  },
+  {
+    "row": 23,
+    "visible": [
+      "18",
+      "Jeevan Umang",
+      "745",
+      "PAR",
+      "Whole Life",
+      "Offline",
+      "30 Days",
+      "55",
+      "100",
+      "100-Age at entry",
+      "",
+      "200000",
+      "AB/ADDB/TERM/PWB , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "BSA+VSRB+FAB",
+      "SB= 8%*BSA/Yr",
+      "SAD+VSRB+FAB,SAD= 7*AP or BSA",
+      "After 1 Yr SSV or GSV which ever is heigher",
+      "In-Force : ≤ 2 Yr- 50%  >2 Yr- 75% ,     Paidup :  ≤ 2 Yr- 40%    >2 Yr -65%"
+    ],
+    "plan_name": "Jeevan Umang",
+    "plan_no": "745",
+    "plan_type": "Whole Life"
+  },
+  {
+    "row": 24,
+    "visible": [
+      "19",
+      "Jeevan Utsav",
+      "771",
+      "NON PAR",
+      "Whole Life",
+      "Offline/Online",
+      "30 Days",
+      "65",
+      "75",
+      "5",
+      "16",
+      "500000",
+      "AB/ADDB/TERM/PWB , <30% of Pre. Under the base plan & AB Max cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "NO Maturity ,GA@40 ₹ /1000 BSA",
+      "Option I - Regular Income Benefit: 10%*BSA , Option II - Flexi Income Benefit: defer and earn 5.5% CI/Yr",
+      "SAD+GA, SAD=7*AP or BSA ,   ≥ 105%*TPP",
+      "After 1 Yr SSV or GSV which ever is heigher",
+      "For in-force policies- upto 75%, For paid-up policies- upto 50%"
+    ],
+    "plan_name": "Jeevan Utsav",
+    "plan_no": "771",
+    "plan_type": "Whole Life"
+  },
+  {
+    "row": 25,
+    "visible": [
+      "20",
+      "New Endowment Plus",
+      "735",
+      "NON PAR",
+      "ULIP",
+      "Offline",
+      "30 Days",
+      "50",
+      "60",
+      "10",
+      "20",
+      "3500/-Monthly",
+      "Linked AB"
+    ],
+    "hover": [
+      "Unit Fund Value",
+      "Fund Type: Bond Fund- Low Risk, Secured Fund- lower to medium ,Balanced Fund- Medium , Growth Fund- High Risk",
+      "Higher of (1)BSA-Withdrawals Preceedings 2 Yr or (2) Unit Fund Value , ≥ 105%*TPP",
+      "Unit Fund Value",
+      "No Loan Facility"
+    ],
+    "plan_name": "New Endowment Plus",
+    "plan_no": "735",
+    "plan_type": "ULIP"
+  },
+  {
+    "row": 26,
+    "visible": [
+      "21",
+      "Nivesh Plus",
+      "749",
+      "NON PAR",
+      "ULIP",
+      "Offline/Online",
+      "90 Days",
+      "70",
+      "85",
+      "10",
+      "25",
+      "125000",
+      "Linked AB"
+    ],
+    "hover": [
+      "Unit Fund Value ,GA: 6th Yr-3%, 10th Yr-4%,15th Yr-5%,20th Yr-6%,25th Yr-7%",
+      "Policy Term: Opt I- 1.25*SP (10-25 Yr), Opt II- 10*SP (10-20 Yr), Fund Type: Bond Fund- Low Risk, Secured Fund- lower to medium ,Balanced Fund- Medium , Growth Fund- High Risk",
+      "Higher of (1)BSA-Withdrawals Preceedings 2 Yr or (2) Unit Fund Value",
+      "Unit Fund Value",
+      "No Loan Facility"
+    ],
+    "plan_name": "Nivesh Plus",
+    "plan_no": "749",
+    "plan_type": "ULIP"
+  },
+  {
+    "row": 27,
+    "visible": [
+      "22",
+      "SIIP",
+      "752",
+      "NON PAR",
+      "ULIP",
+      "Offline/Online",
+      "30 Days",
+      "65",
+      "85",
+      "10",
+      "25",
+      "3500/-Monthly",
+      "Linked AB"
+    ],
+    "hover": [
+      "Unit Fund Value ,GA: 6th Yr-5%, 10th Yr-10%,15th Yr-15%,20th Yr-20%,25th Yr-25%",
+      "Policy Term: 10*AP (30 Days -54 Yr),  7*AP (55-65 Yr), Fund Type: Bond Fund- Low Risk, Secured Fund- lower to medium ,Balanced Fund- Medium , Growth Fund- High Risk",
+      "Higher of (1)BSA-Withdrawals Preceedings 2 Yr or (2) Unit Fund Value , ≥ 105%*TPP",
+      "Unit Fund Value",
+      "No Loan Facility"
+    ],
+    "plan_name": "SIIP",
+    "plan_no": "752",
+    "plan_type": "ULIP"
+  },
+  {
+    "row": 28,
+    "visible": [
+      "23",
+      "Index Plus",
+      "867",
+      "NON PAR",
+      "ULIP",
+      "Offline/Online",
+      "90 Days",
+      "60",
+      "85",
+      "10",
+      "25",
+      "2500/-Monthly",
+      "Linked AB"
+    ],
+    "hover": [
+      "For AP<48000 Term- 15-25 Yr , For AP>48000 Term- 10-25 Yr  , Unit Fund Value ,GA: 6th Yr-3 & 5%, 10th Yr-6 & 10%,15th Yr-12 & 20%,20th Yr-15 & 25%,25th Yr-18 & 30%",
+      "Policy Term: 7 or 10*AP (90 Days -50 Yr),  7*SP (51-60 Yr), Fund Type: Bond Fund- Low Risk, Secured Fund- lower to medium ,Balanced Fund- Medium , Growth Fund- High Risk",
+      "Higher of (1)BSA-Withdrawals Preceedings 2 Yr or (2) Unit Fund Value , ≥ 105%*TPP",
+      "Unit Fund Value",
+      "No Loan Facility"
+    ],
+    "plan_name": "Index Plus",
+    "plan_no": "867",
+    "plan_type": "ULIP"
+  },
+  {
+    "row": 29,
+    "visible": [
+      "24",
+      "New Pension Plus",
+      "873",
+      "NON PAR",
+      "ULIP-Pension",
+      "Offline/Online",
+      "25",
+      "75",
+      "85",
+      "10",
+      "25",
+      "100000",
+      "N/A"
+    ],
+    "hover": [
+      "Utilize the entire proceeds to purchase immediate or deferred annuity",
+      "Deferred Annuity Plan ,  Market Linked Payout , GA@4% to 15.50% of Single Premium or Regular Premium",
+      "Higher of (1)BSA-Withdrawals Preceedings 2 Yr or (2) Unit Fund Value , ≥ 105%*TPP",
+      "Unit Fund Value",
+      "No Loan Facility"
+    ],
+    "plan_name": "New Pension Plus",
+    "plan_no": "873",
+    "plan_type": "ULIP-Pension"
+  },
+  {
+    "row": 30,
+    "visible": [
+      "25",
+      "New Jeevan Shanti",
+      "758",
+      "NON PAR",
+      "Pension",
+      "Offline/Online",
+      "30",
+      "79",
+      "80",
+      "1",
+      "5",
+      "150000",
+      "N/A"
+    ],
+    "hover": [
+      "*Min PP - 50000/- for Divyangjan , Incentive for existing policyholder - 0.15%",
+      "Single & Joint applicable: Grandparents, Parents, Children, Grandchildren, Spouse or Siblings",
+      "PP+Additional death benefit - total annuity amt. payable or 105%*PP. (Additional death benefit= PP* Annuity rate per annum payable monthly / 12)",
+      "GSV= GSV factor* PP - annuity amount payable.GSV factor = 1 to 4 Yr- 75% & 4 and above- 90%",
+      "After 3 month, 50% of annual annuity amount subject to max. 80%*SV"
+    ],
+    "plan_name": "New Jeevan Shanti",
+    "plan_no": "758",
+    "plan_type": "Pension"
+  },
+  {
+    "row": 31,
+    "visible": [
+      "26",
+      "Jeevan Akshay",
+      "857",
+      "NON PAR",
+      "Pension",
+      "Offline/Online",
+      "25",
+      "100",
+      "N",
+      "N",
+      "N",
+      "100000",
+      "N/A"
+    ],
+    "hover": [
+      "*Min PP - 50000/- for Divyangjan , Incentive for existing policyholder - 0.15%",
+      "Single Pre. Immediate annuity Opt from A to J",
+      "Opt A: nothing shall be payable. Opt B,C,D,E : On death during the guaranteed period of 5/10/15/20 years, the annuity to the nominee till the end of the guaranteed period & on death of the after the guaranteed period, nothing shall be payable. Opt F: PP payable to nominee. Opt G: annuity will be increased by a simple rate of 3% per annum for each completed policy year. Opt H: On death of Primary Annuitant, 50% of the annuity payable to the surviving Secondary Annuitant as long as the alive. Opt I:100% of the annuity amount paid in arrears for as long as the both the Annuitant alive. Opt J:100% of the annuity to both the Annuitant alive On death of the last survivor,Purchase Price payable to the nominee.",
+      "After 3 month, Available only Opt f & J",
+      "After 3 month, Available only Opt f & J, 50% of annual annuity amount subject to max. 80%*SV"
+    ],
+    "plan_name": "Jeevan Akshay",
+    "plan_no": "857",
+    "plan_type": "Pension"
+  },
+  {
+    "row": 32,
+    "visible": [
+      "27",
+      "Saral Pension",
+      "862",
+      "NON PAR",
+      "Pension",
+      "Offline/Online",
+      "40",
+      "80",
+      "N",
+      "N",
+      "N",
+      "100000",
+      "N/A"
+    ],
+    "hover": [
+      "*No Maturity, Guranteed immediate annuity with monthly min. 1000/- & yearly 12000/-",
+      "Joint with spouse only, Opt F:Annuity with 100% return of PP & Opt J:Joint life last survivor with 100% return of PP on death of last survivor.",
+      "Death of last survivor 100% of PP payable to nominee/legal heirs.",
+      "After 6 month, Max 95% of Purchase Price , allowed only on Critical Illness",
+      "After 6 Month, Max < 50% of Annual annuity amount payable"
+    ],
+    "plan_name": "Saral Pension",
+    "plan_no": "862",
+    "plan_type": "Pension"
+  },
+  {
+    "row": 33,
+    "visible": [
+      "28",
+      "Smart Pension",
+      "879",
+      "NON PAR",
+      "Pension",
+      "Offline/Online",
+      "18",
+      "100",
+      "N",
+      "N",
+      "N",
+      "100000",
+      "N/A"
+    ],
+    "hover": [
+      "*No Maturity,Single Premium,Min PP - 50000/- for Divyangjan & NPS Subscriber , Incentive for existing policyholder - 0.15% , Single & Joint applicable: Grandparents, Parents, Children, Grandchildren, Spouse or Siblings",
+      "*Options Available: 1.Liquidity Option:  Annuity options - F and J only,exercised after completion of 5 yr, max 3 times, < 60% of Purchase Price. 2.Advanced Annuity Option: Annuity Option J only, discounted cash value max 5 yr annuities 3. Annuity Accumulation Option:defer and accumulate their annuity payments during block of 5 yr",
+      "Options available for payment of Death Benefit (if any): 1. Lumpsum Death Benefit 2. Annuitisation of Death Benefit : shall be utilized for purchasing an Immediate Annuity for nominee 3. In installments",
+      "Annuity Opt D:Balance of the Purchase Price* SV Factor, Opt E1, E2, E3, E4 and E5 :  (Purchase Price Less Sum of Early Return of Purchase Price)*SV Factor. Opt F&J:  PP*SV Factor.",
+      "After 3 month, Opt – E1, E2, E3, E4, E5, F and J only, 50% of annual annuity amount subject to max. 80%*SV"
+    ],
+    "plan_name": "Smart Pension",
+    "plan_no": "879",
+    "plan_type": "Pension"
+  },
+  {
+    "row": 34,
+    "visible": [
+      "29",
+      "Saral Jeevan Bima",
+      "859",
+      "NON PAR",
+      "Term",
+      "Offline/Online",
+      "18",
+      "65",
+      "70",
+      "5",
+      "40",
+      "500000",
+      "N/A"
+    ],
+    "hover": [
+      "*No maturity, Limited,Regular & Single premium payment option , waiting period 45 days, EMR Class -II",
+      "",
+      "Regular & limited : Heigher of 10*AP or 105%*TPP or Absolute amount. Single : Heigher of 125%*SP or Absolute amount. (Absolute Amt.= BSA)",
+      "No surrender,Policy cancellation only on Single & limited opt ,Max 70%*Single Pre. Paid * (Unexpired policy term/ Original policy term)",
+      "No Loan Facility"
+    ],
+    "plan_name": "Saral Jeevan Bima",
+    "plan_no": "859",
+    "plan_type": "Term"
+  },
+  {
+    "row": 35,
+    "visible": [
+      "30",
+      "Yuva Term",
+      "875",
+      "NON PAR",
+      "Term",
+      "Offline",
+      "18",
+      "45",
+      "75",
+      "15",
+      "40",
+      "5000000",
+      "N/A"
+    ],
+    "hover": [
+      "*Mode: YLY & HLY , Level SA or Increasing SA with 10% increase from 6th policy year to 15th till 2X",
+      "",
+      "SAD for Regular & limited: 7*AP or 105%*TPP r Absolute Amount SAD for single : 125%*Pre. Or Absolute amount",
+      "Regular: Nothing , Single : URP Value , Limited : URP Value if full Pre. for atleast 3 consecutive Yr",
+      "No Loan Facility"
+    ],
+    "plan_name": "Yuva Term",
+    "plan_no": "875",
+    "plan_type": "Term"
+  },
+  {
+    "row": 36,
+    "visible": [
+      "31",
+      "Digi Term",
+      "876",
+      "NON PAR",
+      "Term",
+      "Online",
+      "18",
+      "45",
+      "75",
+      "15",
+      "20",
+      "5000000",
+      "N/A"
+    ],
+    "hover": [
+      "*Mode: YLY & HLY , Level SA or Increasing SA with 10% increase from 6th policy year to 15th till 2X",
+      "",
+      "SAD for Regular & limited: 7*AP or 105%*TPP Paid or Absolute Amount SAD for single : 125%*Pre. Or Absolute amount",
+      "Regular: Nothing , Single : URP Value , Limited : URP Value if full Pre. for atleast 3 consecutive Yr",
+      "No Loan Facility"
+    ],
+    "plan_name": "Digi Term",
+    "plan_no": "876",
+    "plan_type": "Term"
+  },
+  {
+    "row": 37,
+    "visible": [
+      "32",
+      "Yuva Credit Life",
+      "877",
+      "NON PAR",
+      "Term",
+      "Offline",
+      "18",
+      "45",
+      "75",
+      "5",
+      "30",
+      "5000000",
+      "N/A"
+    ],
+    "hover": [
+      "Safety net against any loan repayment to the insured’s family in case of his/her unfortunate death during policy term.",
+      "1. Pure decreasing Term Assurance plan Death benefit will reduce over the term. 2.Interest rate for Risk Cover Schedule availabe from 6% to 12% for death benefit",
+      "SAD for limited: 105%*TPP or Absolute Amount , SAD for Single : Absolute amount",
+      "Single : URP Value , Limited : URP Value ,atleast 2 consecutive Pre. For 5 Yr , 3 consecutive Pre. For  10 Yr & 15 Yr",
+      "No Loan Facility"
+    ],
+    "plan_name": "Yuva Credit Life",
+    "plan_no": "877",
+    "plan_type": "Term"
+  },
+  {
+    "row": 38,
+    "visible": [
+      "33",
+      "Digi Credit Life",
+      "878",
+      "NON PAR",
+      "Term",
+      "Online",
+      "18",
+      "45",
+      "75",
+      "5",
+      "30",
+      "5000000",
+      "N/A"
+    ],
+    "hover": [
+      "Safety net against any loan repayment to the insured’s family in case of his/her unfortunate death during policy term.",
+      "1. Pure decreasing Term Assurance plan Death benefit will reduce over the term. 2.Interest rate for Risk Cover Schedule availabe from 6% to 12% for death benefit",
+      "SAD for limited: 105%*TPP or Absolute Amount , SAD for Single : Absolute amount",
+      "Single : URP Value , Limited : URP Value ,atleast 2 consecutive Pre. For 5 Yr , 3 consecutive Pre. For  10 Yr & 15 Yr",
+      "No Loan Facility"
+    ],
+    "plan_name": "Digi Credit Life",
+    "plan_no": "878",
+    "plan_type": "Term"
+  },
+  {
+    "row": 39,
+    "visible": [
+      "34",
+      "New Tech-Term",
+      "954",
+      "NON PAR",
+      "Term",
+      "Online",
+      "18",
+      "65",
+      "80",
+      "10",
+      "40",
+      "5000000",
+      "AB Rider, <30% of Pre. Under the base plan & Max Cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "*Mode: YLY & HLY , Level SA or Increasing SA with 10% increase from 6th policy year to 15th till 2X",
+      "*Availabe Online only",
+      "SAD for Regular & limited: 7*AP or 105%*TPP or Absolute Amount SAD for single : 125%*Pre. Or Absolute amount",
+      "Regular: Nothing , Single : URP Value , Limited : URP Value ,atleast 2 consecutive Pre. < 10 Yr , 3 consecutive Pre. > 10 Yr",
+      "No Loan Facility"
+    ],
+    "plan_name": "New Tech-Term",
+    "plan_no": "954",
+    "plan_type": "Term"
+  },
+  {
+    "row": 40,
+    "visible": [
+      "35",
+      "New Jeevan Amar",
+      "955",
+      "NON PAR",
+      "Term",
+      "Offline",
+      "18",
+      "65",
+      "80",
+      "10",
+      "40",
+      "2500000",
+      "AB Rider, <30% of Pre. Under the base plan & Max Cap < 3*BSA or 1 Cr"
+    ],
+    "hover": [
+      "*Mode: YLY & HLY , Level SA or Increasing SA with 10% increase from 6th policy year to 15th till 2X",
+      "*Availabe Offline only",
+      "SAD for Regular & limited: 7*AP or 105%*TPP or Absolute Amount SAD for single : 125%*Pre. Or Absolute amount",
+      "Regular: Nothing , Single : URP Value , Limited : URP Value ,atleast 2 consecutive Pre. < 10 Yr , 3 consecutive Pre. > 10 Yr",
+      "No Loan Facility"
+    ],
+    "plan_name": "New Jeevan Amar",
+    "plan_no": "955",
+    "plan_type": "Term"
+  }
+];
+const DISPLAY_INDICES = [0, 1, 2, 3, 5, 6, 8, 9, 11, 12]; // indices of original columns to display (combined logic in render)
+const HIDE_COL = 4;
+
+function escapeHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function render(rows){
+  const tableBody = document.querySelector('#plans-table tbody');
+  tableBody.innerHTML = '';
+  rows.forEach(p => {
+    const tr = document.createElement('tr');
+    let html = '';
+    for(let idx of DISPLAY_INDICES){
+      // combined G(6)+H(7)
+      if(idx === 6){
+        const g = p.visible[6] || '';
+        const h = p.visible[7] || '';
+        let cell = '';
+        if(g && h) cell = g + '–' + h;
+        else cell = g || h || '';
+        // normalize column M if needed later
+        html += `<td>${escapeHtml(cell)}</td>`;
+        continue;
+      }
+      // combined J(9)+K(10)
+      if(idx === 9){
+        const j = p.visible[9] || '';
+        const k = p.visible[10] || '';
+        let cell = '';
+        if(j && k) cell = j + '–' + k;
+        else cell = j || k || '';
+        html += `<td>${escapeHtml(cell)}</td>`;
+        continue;
+      }
+      let cell = p.visible[idx] || '';
+      // normalize column M (index 12)
+      if(idx === 12){
+        const up = String(cell||'').trim().toUpperCase();
+        if(up === '' || up === 'NA' || up === 'B') cell = 'N/A';
+      }
+      if(idx === 1){
+        const planName = escapeHtml(p.plan_name || '');
+        const planNo = escapeHtml(p.plan_no || '');
+        html += `<td class="name" tabindex="0">${escapeHtml(cell)}<div class="tooltip-card" role="dialog" aria-hidden="true">`+
+                `<h3 style="margin:0 0 8px 0">${planName} ${planNo?('(No. '+planNo+')'):''}</h3>`+
+                `<div class="tooltip-grid">`+
+                `<div style="font-weight:600">Maturity Benefits</div><div>${escapeHtml(p.hover[0]||'—')}</div>`+
+                `<div style="font-weight:600">Survival Benefits</div><div>${escapeHtml(p.hover[1]||'—')}</div>`+
+                `<div style="font-weight:600">Death Benefits</div><div>${escapeHtml(p.hover[2]||'—')}</div>`+
+                `<div style="font-weight:600">Surrender</div><div>${escapeHtml(p.hover[3]||'—')}</div>`+
+                `<div style="font-weight:600">Loan</div><div>${escapeHtml(p.hover[4]||'—')}</div>`+
+                `</div></div></td>`;
+      } else {
+        html += `<td>${escapeHtml(cell)}</td>`;
+      }
+    }
+    tr.innerHTML = html;
+    tableBody.appendChild(tr);
+  });
+  initTooltips();
+  // after rendering, append abbreviation and warning below table (once)
+  renderFooterInfo();
+}
+
+function applyFilters(){
+  let rows = RECORDS.slice();
+  const raw = (document.getElementById('search') && document.getElementById('search').value) || '';
+  const q = raw.trim().toLowerCase();
+  if(q){
+    const qDigits = q.replace(/\D+/g,'');
+    rows = rows.filter(p => {
+      const name1 = (p.plan_name||'').toString().toLowerCase();
+      const name2 = (p.visible && p.visible[1]) ? p.visible[1].toString().toLowerCase() : '';
+      const visibleCombined = (p.visible || []).join(' ').toString().toLowerCase();
+      const pno = (p.plan_no||'').toString().toLowerCase();
+      const pnoDigits = pno.replace(/\D+/g,'');
+      return name1.includes(q) || name2.includes(q) || visibleCombined.includes(q) || pno.includes(q) || (qDigits && pnoDigits && pnoDigits.includes(qDigits));
+    });
+  }
+  if(document.getElementById('seg-par').classList.contains('active')) rows = rows.filter(p => (p.visible.some(v=>String(v).toUpperCase().includes('PAR')) && !String(p.visible.join(' ')).toUpperCase().includes('NON PAR')));
+  if(document.getElementById('seg-nonpar').classList.contains('active')) rows = rows.filter(p => (p.visible.some(v=>String(v).toUpperCase().includes('NON PAR'))));
+  const pt = (document.getElementById('ptype').value||'').trim().toLowerCase();
+  if(pt) rows = rows.filter(p => (p.plan_type||'').toLowerCase().includes(pt));
+  return rows;
+}
+
+function initTooltips(){
+  document.querySelectorAll('#plans-table td.name').forEach(cell => {
+    if(cell._tooltipInit) return;
+    cell._tooltipInit = true;
+    let tip = cell.querySelector('.tooltip-card, .tooltip, [role="dialog"]');
+    function findTip(){ if(tip) return tip; const row = cell.closest('tr'); if(row) tip = row.querySelector('.tooltip-card, .tooltip, [role="dialog"]'); return tip; }
+    function moveToBody(t){ if(!t) return; if(t.parentElement !== document.body) document.body.appendChild(t); t.style.position='fixed'; t.style.zIndex=2147483647; t.style.transform='none'; }
+    function positionForCell(){
+      const t = findTip(); if(!t) return;
+      moveToBody(t);
+      t.style.display='block'; t.style.left='0px'; t.style.top='0px';
+      const rect = cell.getBoundingClientRect();
+      const tipRect = t.getBoundingClientRect();
+      let left = Math.round(rect.right + 12);
+      let top = Math.round(rect.top + (rect.height - tipRect.height)/2);
+      if(left + tipRect.width > window.innerWidth - 8){
+        left = Math.round(rect.left - tipRect.width - 12);
+        if(left < 8) left = 8;
+      }
+      const searchEl = document.querySelector('.controls');
+      const searchRect = searchEl ? searchEl.getBoundingClientRect() : null;
+      if(searchRect){
+        if(top < searchRect.bottom + 4){
+          // place above search box
+          top = Math.max(8, searchRect.top - tipRect.height - 8);
+          left = Math.round(rect.left + (rect.width - tipRect.width)/2);
+          if(left + tipRect.width > window.innerWidth - 8) left = window.innerWidth - tipRect.width - 8;
+          if(left < 8) left = 8;
+        }
+      }
+      top = Math.max(8, Math.min(top, window.innerHeight - tipRect.height - 8));
+      t.style.left = left + 'px'; t.style.top = top + 'px'; t.style.display='block';
+    }
+    function hideTip(){ const t = findTip(); if(t) t.style.display='none'; }
+    cell.addEventListener('mouseenter', positionForCell);
+    cell.addEventListener('mouseleave', hideTip);
+    cell.addEventListener('focus', positionForCell);
+    cell.addEventListener('blur', hideTip);
+    cell.addEventListener('touchstart', function(e){ e.preventDefault(); const t=findTip(); if(!t) return; if(t.style.display==='block') hideTip(); else positionForCell(); }, {passive:false});
+    window.addEventListener('resize', function(){ const t=findTip(); if(t && t.style.display==='block') positionForCell(); });
+    window.addEventListener('scroll', function(){ const t=findTip(); if(t && t.style.display==='block') positionForCell(); }, {passive:true});
+  });
+}
+
+// render abbreviation and warning into page bottom area
+function renderFooterInfo(){
+  const cont = document.querySelector('.container');
+  if(!cont) return;
+  // remove existing if any
+  const oldA = document.querySelector('.abbrev');
+  if(oldA) oldA.remove();
+  const oldW = document.querySelector('.warning');
+  if(oldW) oldW.remove();
+  // get texts from inline data attributes if present
+  const aText = document.body.dataset.abbrev || '';
+  const wText = document.body.dataset.warning || '';
+  if(aText){
+    const div = document.createElement('div');
+    div.className = 'abbrev';
+    div.innerHTML = aText;
+    document.body.appendChild(div);
+  }
+  if(wText){
+    const div2 = document.createElement('div');
+    div2.className = 'warning';
+    div2.innerHTML = wText;
+    document.body.appendChild(div2);
+  }
+}
+
+// dynamic adjustment of thead top so it doesn't overlap content
+function updateTheadTop(){
+  const topbar = document.querySelector('.topbar');
+  const controls = document.querySelector('.controls');
+  const theads = document.querySelectorAll('.table thead th');
+  if(!theads.length) return;
+  const topbarH = topbar ? topbar.getBoundingClientRect().height : 64;
+  let topValue = topbarH;
+  if(controls){
+    const cr = controls.getBoundingClientRect();
+    // if controls are below topbar, set top to controls.bottom; else use topbar height
+    if(cr.top > topbarH){
+      topValue = cr.bottom;
+    } else {
+      topValue = topbarH;
+    }
+  }
+  theads.forEach(th => th.style.top = Math.round(topValue) + 'px');
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  // store abbrev and warning texts on body via dataset for renderFooterInfo to use
+  document.body.dataset.abbrev = "Abbreviations- AB: Accidental Benefits ADDB: Accidental Death and Disability Benefit Rider SAD: Sum Assured on Death PWB:Premium Waiver Benefit Rider CIHR:Critical Illnes & Health Rider BSA: Basic Sum Assured VSRB:Vested Simple Reversionary Bonuses FAB:Final Additional Bonus LA:Loyalty Addition GA:Guaranteed Addition SAM: Sum Assured on Maturity SA:Sum Assured Opt: Option AP:Annualized Premium TPP:Total Premium Paid SP: Single Premium PP: Purchase Price Pre.: Premium GSV: Gross Surrender Value SSV: Special Surrender Value SPP: Single Premium Paid URP:Unexpired Risk Premium SV: Surrender Value T: Term LTP: Limited Time Period PPT: Premium Paying Term";
+  document.body.dataset.warning = "WARNING: \u201cThis webpage has been created for educational purposes only. It does not provide or certify 100% accurate information. For correct details, please refer to the plan brochures and updated circulars issued by LIC Of India time to time. The creator will not be responsible for any discrepancies.\u201d";
+  render(RECORDS);
+  // wire search and filters
+  const si = document.getElementById('search');
+  if(si){
+    const _runSearch = function(){ render(applyFilters()); updateTheadTop(); };
+    si.addEventListener('input', _runSearch);
+    si.addEventListener('keyup', _runSearch);
+    si.addEventListener('change', _runSearch);
+    // also allow pressing Enter anywhere to trigger search
+    si.addEventListener('keydown', function(e){ if(e.key === 'Enter') _runSearch(); });
+  }
+  const segAll = document.getElementById('seg-all');
+  const segPar = document.getElementById('seg-par');
+  const segNonPar = document.getElementById('seg-nonpar');
+  if(segAll && segPar && segNonPar){
+    segAll.addEventListener('click', function(){ segAll.classList.add('active'); segPar.classList.remove('active'); segNonPar.classList.remove('active'); render(applyFilters()); updateTheadTop(); });
+    segPar.addEventListener('click', function(){ segPar.classList.add('active'); segAll.classList.remove('active'); segNonPar.classList.remove('active'); render(applyFilters()); updateTheadTop(); });
+    segNonPar.addEventListener('click', function(){ segNonPar.classList.add('active'); segPar.classList.remove('active'); segAll.classList.remove('active'); render(applyFilters()); updateTheadTop(); });
+  }
+  const psel = document.getElementById('ptype');
+  if(psel) psel.addEventListener('change', function(){ render(applyFilters()); });
+  // initial adjustment
+  updateTheadTop();
+  window.addEventListener('resize', updateTheadTop);
+  window.addEventListener('scroll', updateTheadTop, {passive:true});
+});
+</script>
+<script>
+(function(){
+  function adjustBodyPadding(){
+    var top = document.querySelector('.topbar');
+    if(!top) return;
+    // compute total height including margins
+    var h = top.offsetHeight;
+    // add small gap
+    document.body.style.paddingTop = (h + 6) + 'px';
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ adjustBodyPadding(); setTimeout(adjustBodyPadding,200); });
+  } else {
+    adjustBodyPadding();
+    setTimeout(adjustBodyPadding,200);
+  }
+  window.addEventListener('resize', function(){ setTimeout(adjustBodyPadding,100); });
+})();
+</script>
+<script>
+(function(){
+  function adjustBodyPadding(){
+    var top = document.querySelector('.topbar');
+    if(!top) return;
+    var h = top.offsetHeight;
+    document.body.style.paddingTop = (h + 6) + 'px';
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ adjustBodyPadding(); setTimeout(adjustBodyPadding,200); });
+  } else {
+    adjustBodyPadding();
+    setTimeout(adjustBodyPadding,200);
+  }
+  window.addEventListener('resize', function(){ setTimeout(adjustBodyPadding,100); });
+})();
+</script>
+<script>
+(function(){
+  function moveFooter(){
+    var ab = document.querySelector('.abbrev-block');
+    var wr = document.querySelector('.warning-block');
+    var footer = document.createElement('div');
+    footer.style.marginTop = '20px';
+    if(ab){ footer.appendChild(ab); }
+    if(wr){ footer.appendChild(wr); }
+    document.body.appendChild(footer);
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', moveFooter);
+  } else {
+    moveFooter();
+  }
+})();
+</script>
+<script>
+(function(){
+  function setTableTop(){
+    var topbar = document.querySelector('.topbar');
+    var controls = document.querySelector('.controls');
+    var extra = 4; // small gap
+    var top = 0;
+    if(topbar){
+      top += topbar.getBoundingClientRect().height;
+    }
+    if(controls){
+      // controls may be inside panel; include its height
+      top += controls.getBoundingClientRect().height;
+    } else {
+      // try .panel header
+      var panel = document.querySelector('.panel .controls');
+      if(panel) top += panel.getBoundingClientRect().height;
+    }
+    top = Math.ceil(top + extra);
+    document.documentElement.style.setProperty('--table-top', top + 'px');
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ setTableTop(); setTimeout(setTableTop,200); });
+  } else {
+    setTableTop(); setTimeout(setTableTop,200);
+  }
+  window.addEventListener('resize', function(){ setTimeout(setTableTop,120); });
+  // also when fonts load (optional)
+  window.addEventListener('load', function(){ setTableTop(); });
+})();
+</script>
+<script id="sticky-table-script">
+(function(){
+  function computeTop(){
+    var topbar = document.querySelector('.topbar');
+    var controls = document.querySelector('.controls') || document.querySelector('.panel') || document.querySelector('.filter-bar') || document.querySelector('.controls-panel');
+    var extraGap = 2;
+    var top = 0;
+    if(topbar){
+      top += topbar.getBoundingClientRect().height;
+    }
+    if(controls){
+      top += controls.getBoundingClientRect().height;
+    } else {
+      var panel = document.querySelector('.panel');
+      if(panel) top += panel.getBoundingClientRect().height;
+    }
+    top = Math.ceil(top + extraGap);
+    document.documentElement.style.setProperty('--table-top', top + 'px');
+  }
+  function ready(){
+    computeTop();
+    setTimeout(computeTop, 250);
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', ready);
+  } else { ready(); }
+  window.addEventListener('resize', function(){ setTimeout(computeTop, 120); });
+  var obs = new MutationObserver(function(){ setTimeout(computeTop, 80); });
+  var watch = document.querySelector('body');
+  if(watch) obs.observe(watch, {childList:true, subtree:true, characterData:true});
+})();
+</script>
+<!-- MOBILE_OUTSIDE_TOUCH_HIDE_TOOLTIP_v1 -->
+<script nonce="npNth-cmXVp_u4BD">
+// Hide open plan tooltips when touching anywhere outside a plan name or tooltip (mobile only)
+document.addEventListener('DOMContentLoaded', function(){
+  if(!('ontouchstart' in window) && navigator.maxTouchPoints <= 0) return;
+  function hideAllTooltips(){
+    document.querySelectorAll('.tooltip-card').forEach(function(t){ t.style.display = 'none'; });
+    document.querySelectorAll('#plans-table td.name').forEach(function(c){ c.dataset._tooltipShown = '0'; });
+  }
+  // If touch happens outside a plan name cell or tooltip-card, hide all tooltips
+  document.addEventListener('touchstart', function(e){
+    var target = e.target;
+    if(target && target.closest && (target.closest('.tooltip-card') || target.closest('#plans-table td.name'))) { return; }
+    hideAllTooltips();
+  }, {passive:true});
+
+  // Also hide on scroll/resize/touchmove to avoid stale tooltips
+  ['scroll','resize','touchmove'].forEach(function(evt){ window.addEventListener(evt, hideAllTooltips, {passive:true}); });
+});
+</script>
+</body></html>
